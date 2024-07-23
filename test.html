@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const array = [
+        {
+          name: "cscs",
+        },
+        {
+          name: "aaaa",
+        },
+      ];
+      const h1React = (
+        <ul>
+          {array.map((course, index) => (
+            <li key={index}>{course.name}</li>
+          ))}
+          <li>hêlo</li>
+        </ul>
+      );
+
+      const jsx = (
+        <React.Fragment>
+          <h1>vvndkvn</h1>
+          <h2>cdcndc</h2>
+        </React.Fragment>
+      );
+
+      ReactDOM.render(h1React, document.getElementById("root"));
+    </script>
+    <script src="test.js"></script>
+  </body>
+</html>
