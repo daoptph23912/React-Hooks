@@ -8,6 +8,9 @@ import Couter from "./useCallback/callback";
 import FocusInput from "./useRef/ref";
 import ClickCounter from "./useRef/clickCounter";
 import StopWatch from "./useRef/stopwatch";
+import { Parent } from "./useImperativeHandle/Vidu2";
+import { MyComponentLayoutEffect } from "./useLayoutEffect/useLayoutEffect";
+import { UseDebugValue } from "./useDebugValue/useDebugValue";
 function App() {
   const products = [
     { id: 1, name: "Product 1", price: 10 },
@@ -17,7 +20,7 @@ function App() {
 
   return (
     <>
-      <div>Tìm hiểu useMemo</div>
+      <h1>Tìm hiểu các React Hooks</h1>
       <div>
         <ProductList products={products} />
         <IntervalComponent />
@@ -29,8 +32,14 @@ function App() {
         <Couter />
 
         <FocusInput />
-        <ClickCounter/>
-        <StopWatch/>
+        <ClickCounter />
+        <StopWatch />
+
+        <Parent />
+
+        <MyComponentLayoutEffect />
+
+        <UseDebugValue />
       </div>
     </>
   );
