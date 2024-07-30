@@ -3,9 +3,10 @@ import { useMemo, useState } from "react";
 export const ProductList = ({ products }) => {
     const [selectProduct, setSelectProduct] = useState([]);
     const totalPrice = useMemo(() => {
-      console.log("render");
+      console.log("Tính toán tổng lại");
       return selectProduct.reduce((total, product) => total + product.price, 0);
     }, [selectProduct]);
+
     const toggleProduct = (product) => {
       setSelectProduct((prevSelected) =>
         prevSelected.includes(product)
@@ -13,6 +14,7 @@ export const ProductList = ({ products }) => {
           : [...prevSelected, product]
       );
     };
+
     return (
       <>
         <div>
@@ -32,34 +34,34 @@ export const ProductList = ({ products }) => {
     );
 
   //không sử dụng memo
-//   const [selectProduct, setSelectProduct] = useState([]);
+  // const [selectProduct, setSelectProduct] = useState([]);
 
-//   const totalPrice = selectProduct.reduce((total, product) => {
-//     console.log("Tính toán lại tổng giá trị");
-//     return total + product.price;
-//   }, 0);
+  // const totalPrice = selectProduct.reduce((total, product) => {
+  //   console.log("Tính toán lại tổng giá trị");
+  //   return total + product.price;
+  // }, 0);
 
-//   const toggleProduct = (product) => {
-//     setSelectProduct((prevSelected) =>
-//       prevSelected.includes(product)
-//         ? prevSelected.filter((p) => p !== product)
-//         : [...prevSelected, product]
-//     );
-//   };
+  // const toggleProduct = (product) => {
+  //   setSelectProduct((prevSelected) =>
+  //     prevSelected.includes(product)
+  //       ? prevSelected.filter((p) => p !== product)
+  //       : [...prevSelected, product]
+  //   );
+  // };
 
-//   return (
-//     <div>
-//       <h1>Total Price: ${totalPrice}</h1>
-//       <ul>
-//         {products.map((product) => (
-//           <li key={product.id}>
-//             {product.name} - ${product.price}
-//             <button onClick={() => toggleProduct(product)}>
-//               {selectProduct.includes(product) ? "Remove" : "Add"}
-//             </button>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
+  // return (
+  //   <div>
+  //     <h1>Total Price: ${totalPrice}</h1>
+  //     <ul>
+  //       {products.map((product) => (
+  //         <li key={product.id}>
+  //           {product.name} - ${product.price}
+  //           <button onClick={() => toggleProduct(product)}>
+  //             {selectProduct.includes(product) ? "Remove" : "Add"}
+  //           </button>
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   </div>
+  // );
 };

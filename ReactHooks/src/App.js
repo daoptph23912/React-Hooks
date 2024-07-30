@@ -23,6 +23,7 @@ function App() {
       <h1>Tìm hiểu các React Hooks</h1>
       <div>
         <ProductList products={products} />
+        
         <IntervalComponent />
 
         <ThemeProvider>

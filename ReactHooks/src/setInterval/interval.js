@@ -6,7 +6,6 @@ export const IntervalComponent = () => {
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setCount((prevCount) => prevCount + 1);
-      console.log(1);
     }, 1000);
     return () => {
       clearInterval(intervalRef.current);
